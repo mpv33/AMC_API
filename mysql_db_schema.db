@@ -1,0 +1,37 @@
+
+const CreateSchema = () => {
+  const sql1 = `
+    CREATE TABLE IF NOT EXISTS AMC_SERVICE (
+      serviceId INT NOT NULL AUTO_INCREMENT,
+      service_name VARCHAR(100) NOT NULL,
+      service_quantity INT NOT NULL,
+      service_unit INT NOT NULL,
+      service_actual_price INT NOT NULL,
+      service_discount INT NOT NULL,
+      service_amc_price INT NOT NULL,
+      PRIMARY KEY ( serviceId )
+  );`
+  const sql2 = `
+    CREATE TABLE IF NOT EXISTS AMC_PART (
+      partId INT NOT NULL AUTO_INCREMENT,
+      part_name VARCHAR(100) NOT NULL,
+      part_quantity INT NOT NULL,
+      part_unit INT NOT NULL,
+      part_actual_price INT NOT NULL,
+      part_discount INT NOT NULL,
+      part_amc_price INT NOT NULL,
+      PRIMARY KEY ( partId )
+    );
+  `
+  const sql3 = `
+    CREATE TABLE IF NOT EXISTS AMC_DETAIL (
+    amcId INT NOT NULL AUTO_INCREMENT,
+    detail_name VARCHAR(100) NOT NULL,
+    detail_city_type VARCHAR(100) NOT NULL,
+    serviceId INT,
+    partId INT,
+      FOREIGN KEY (serviceId) REFERENCES AMC_SERVICE(serviceId),
+      FOREIGN KEY (partId) REFERENCES AMC_PART(partId),
+      PRIMARY KEY ( amcId )
+    );
+  `
