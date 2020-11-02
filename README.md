@@ -3,7 +3,7 @@
 AMC API :  adding detials of AMC via API and finding total AMC cost using nodejs and mysql
 
 # prerequest-
-npm install node 
+npm install node /
 npm install (package.json ) all 
 # run 
 npm start or node server.js
