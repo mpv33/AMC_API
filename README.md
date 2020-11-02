@@ -1,6 +1,9 @@
 "# AMC_API" 
 # About:
-AMC API for adding detials via API and finding total amc cost using nodejs and mysql
+AMC API :  adding detials of AMC via API and finding total AMC cost using nodejs and mysql
+
+# prerequest-
+npm install node 
 
 
 # API ROOT : POSTMAN
